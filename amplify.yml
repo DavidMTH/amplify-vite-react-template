@@ -11,8 +11,8 @@ frontend:
       commands:
         - npm run build
         - echo Logging to CloudWatch
-        - awslogs get /var/log/your_log_file.log --region us-east-1 /tmp/awslogs.txt
-        - awslogs put-log-events --CustomLogging /aws/amplify/Amplify_Docs_Gen2_testapp --log-stream-name deployment --log-events file=/tmp/awslogs.txt
+        - /usr/local/bin/awslogs get /var/log/your_log_file.log --region eu-central-1 /tmp/awslogs.txt
+        - /usr/local/bin/awslogs put-log-events --CustomLogging /aws/amplify/Amplify_Docs_Gen2_testapp --log-stream-name deployment --log-events file=/tmp/awslogs.txt
   artifacts:
     baseDirectory: dist
     files:
